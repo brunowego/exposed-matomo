@@ -1,0 +1,546 @@
+2019-12-27T11:36:37.329738Z	    6 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:36:37.330465Z	    6 Query	SET NAMES utf8
+2019-12-27T11:36:37.331053Z	    6 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:36:37.342898Z	    6 Prepare	SELECT DATABASE()
+2019-12-27T11:36:37.343208Z	    6 Execute	SELECT DATABASE()
+2019-12-27T11:36:37.343804Z	    6 Reset stmt
+2019-12-27T11:36:37.345097Z	    6 Close stmt
+2019-12-27T11:36:37.345915Z	    6 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:36:37.346258Z	    6 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:36:37.347605Z	    6 Reset stmt
+2019-12-27T11:36:37.348101Z	    6 Close stmt
+2019-12-27T11:36:37.349019Z	    6 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:36:37.349568Z	    6 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:36:37.350735Z	    6 Reset stmt
+2019-12-27T11:36:37.367197Z	    6 Close stmt
+2019-12-27T11:36:37.368671Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.369082Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CorePluginsAdmin'
+2019-12-27T11:36:37.370311Z	    6 Close stmt
+2019-12-27T11:36:37.370735Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.371268Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CorePluginsAdmin', '3.13.0', '1')
+2019-12-27T11:36:37.403198Z	    6 Close stmt
+2019-12-27T11:36:37.403872Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.404362Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CoreHome'
+2019-12-27T11:36:37.405554Z	    6 Close stmt
+2019-12-27T11:36:37.405919Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.406584Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CoreHome', '3.13.0', '1')
+2019-12-27T11:36:37.413409Z	    6 Close stmt
+2019-12-27T11:36:37.413719Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.414852Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_WebsiteMeasurable'
+2019-12-27T11:36:37.415901Z	    6 Close stmt
+2019-12-27T11:36:37.417753Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.418270Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_WebsiteMeasurable', '3.13.0', '1')
+2019-12-27T11:36:37.424114Z	    6 Close stmt
+2019-12-27T11:36:37.424865Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.425077Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_IntranetMeasurable'
+2019-12-27T11:36:37.426212Z	    6 Close stmt
+2019-12-27T11:36:37.426738Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.427412Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_IntranetMeasurable', '3.13.0', '1')
+2019-12-27T11:36:37.432213Z	    6 Close stmt
+2019-12-27T11:36:37.432544Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.433019Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CoreVisualizations'
+2019-12-27T11:36:37.434217Z	    6 Close stmt
+2019-12-27T11:36:37.434476Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.434753Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CoreVisualizations', '3.13.0', '1')
+2019-12-27T11:36:37.438921Z	    6 Close stmt
+2019-12-27T11:36:37.439163Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.439504Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Proxy'
+2019-12-27T11:36:37.441105Z	    6 Close stmt
+2019-12-27T11:36:37.441743Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.442568Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Proxy', '3.13.0', '1')
+2019-12-27T11:36:37.447662Z	    6 Close stmt
+2019-12-27T11:36:37.448457Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.448664Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_API'
+2019-12-27T11:36:37.450615Z	    6 Close stmt
+2019-12-27T11:36:37.451285Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.452113Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_API', '3.13.0', '1')
+2019-12-27T11:36:37.457981Z	    6 Close stmt
+2019-12-27T11:36:37.458612Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.458994Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Widgetize'
+2019-12-27T11:36:37.459800Z	    6 Close stmt
+2019-12-27T11:36:37.460224Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.461276Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Widgetize', '3.13.0', '1')
+2019-12-27T11:36:37.465845Z	    6 Close stmt
+2019-12-27T11:36:37.466420Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.466845Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Transitions'
+2019-12-27T11:36:37.467956Z	    6 Close stmt
+2019-12-27T11:36:37.468430Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.468974Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Transitions', '3.13.0', '1')
+2019-12-27T11:36:37.475058Z	    6 Query	CREATE TABLE IF NOT EXISTS `matomo_user_language` ( login VARCHAR( 100 ) NOT NULL ,
+					     language VARCHAR( 10 ) NOT NULL ,
+					     use_12_hour_clock TINYINT(1) NOT NULL DEFAULT 0 ,
+					     PRIMARY KEY ( login ) ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+2019-12-27T11:36:37.485590Z	    6 Close stmt
+2019-12-27T11:36:37.485950Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.486843Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_LanguagesManager'
+2019-12-27T11:36:37.487851Z	    6 Close stmt
+2019-12-27T11:36:37.488237Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.488613Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_LanguagesManager', '3.13.0', '1')
+2019-12-27T11:36:37.494954Z	    6 Close stmt
+2019-12-27T11:36:37.495279Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.495738Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Actions'
+2019-12-27T11:36:37.496337Z	    6 Close stmt
+2019-12-27T11:36:37.496627Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.496801Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Actions', '3.13.0', '1')
+2019-12-27T11:36:37.501515Z	    6 Query	CREATE TABLE IF NOT EXISTS `matomo_user_dashboard` ( login VARCHAR( 100 ) NOT NULL ,
+					  iddashboard INT NOT NULL ,
+					  name VARCHAR( 100 ) NULL DEFAULT NULL ,
+					  layout TEXT NOT NULL,
+					  PRIMARY KEY ( login , iddashboard ) ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+2019-12-27T11:36:37.511639Z	    6 Close stmt
+2019-12-27T11:36:37.512382Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.512778Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Dashboard'
+2019-12-27T11:36:37.519464Z	    6 Close stmt
+2019-12-27T11:36:37.520184Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.520840Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Dashboard', '3.13.0', '1')
+2019-12-27T11:36:37.526365Z	    6 Close stmt
+2019-12-27T11:36:37.526999Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.527233Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_MultiSites'
+2019-12-27T11:36:37.528030Z	    6 Close stmt
+2019-12-27T11:36:37.528672Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.529120Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_MultiSites', '3.13.0', '1')
+2019-12-27T11:36:37.534522Z	    6 Close stmt
+2019-12-27T11:36:37.535130Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.535553Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Referrers'
+2019-12-27T11:36:37.536363Z	    6 Close stmt
+2019-12-27T11:36:37.536884Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.537131Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Referrers', '3.13.0', '1')
+2019-12-27T11:36:37.542379Z	    6 Close stmt
+2019-12-27T11:36:37.542918Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.543660Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_UserLanguage'
+2019-12-27T11:36:37.544395Z	    6 Close stmt
+2019-12-27T11:36:37.545026Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.545510Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_UserLanguage', '3.13.0', '1')
+2019-12-27T11:36:37.549678Z	    6 Close stmt
+2019-12-27T11:36:37.550999Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.551360Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_DevicesDetection'
+2019-12-27T11:36:37.552360Z	    6 Close stmt
+2019-12-27T11:36:37.552888Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.553353Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_DevicesDetection', '3.13.0', '1')
+2019-12-27T11:36:37.558734Z	    6 Close stmt
+2019-12-27T11:36:37.559119Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.559531Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Goals'
+2019-12-27T11:36:37.560120Z	    6 Close stmt
+2019-12-27T11:36:37.560741Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.561015Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Goals', '3.13.0', '1')
+2019-12-27T11:36:37.565788Z	    6 Close stmt
+2019-12-27T11:36:37.566448Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.566911Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Ecommerce'
+2019-12-27T11:36:37.567755Z	    6 Close stmt
+2019-12-27T11:36:37.568179Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.568754Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Ecommerce', '3.13.0', '1')
+2019-12-27T11:36:37.574249Z	    6 Close stmt
+2019-12-27T11:36:37.575316Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.575502Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_SEO'
+2019-12-27T11:36:37.576206Z	    6 Close stmt
+2019-12-27T11:36:37.576646Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.577275Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_SEO', '3.13.0', '1')
+2019-12-27T11:36:37.582663Z	    6 Close stmt
+2019-12-27T11:36:37.584243Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.584523Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Events'
+2019-12-27T11:36:37.585549Z	    6 Close stmt
+2019-12-27T11:36:37.586531Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.586796Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Events', '3.13.0', '1')
+2019-12-27T11:36:37.592742Z	    6 Close stmt
+2019-12-27T11:36:37.593548Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.594270Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_UserCountry'
+2019-12-27T11:36:37.595036Z	    6 Close stmt
+2019-12-27T11:36:37.595646Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.596328Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_UserCountry', '3.13.0', '1')
+2019-12-27T11:36:37.600437Z	    6 Close stmt
+2019-12-27T11:36:37.601264Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.601500Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_GeoIp2'
+2019-12-27T11:36:37.602816Z	    6 Close stmt
+2019-12-27T11:36:37.603662Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.604027Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_GeoIp2', '3.13.0', '1')
+2019-12-27T11:36:37.610249Z	    6 Close stmt
+2019-12-27T11:36:37.610674Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.611271Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_VisitsSummary'
+2019-12-27T11:36:37.612642Z	    6 Close stmt
+2019-12-27T11:36:37.613009Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.613485Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_VisitsSummary', '3.13.0', '1')
+2019-12-27T11:36:37.620065Z	    6 Close stmt
+2019-12-27T11:36:37.620879Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.621128Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_VisitFrequency'
+2019-12-27T11:36:37.622332Z	    6 Close stmt
+2019-12-27T11:36:37.622910Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.623598Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_VisitFrequency', '3.13.0', '1')
+2019-12-27T11:36:37.628724Z	    6 Close stmt
+2019-12-27T11:36:37.629150Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.629617Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_VisitTime'
+2019-12-27T11:36:37.630566Z	    6 Close stmt
+2019-12-27T11:36:37.631185Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.631437Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_VisitTime', '3.13.0', '1')
+2019-12-27T11:36:37.636726Z	    6 Close stmt
+2019-12-27T11:36:37.637322Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.637681Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_VisitorInterest'
+2019-12-27T11:36:37.638572Z	    6 Close stmt
+2019-12-27T11:36:37.639140Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.639420Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_VisitorInterest', '3.13.0', '1')
+2019-12-27T11:36:37.644771Z	    6 Close stmt
+2019-12-27T11:36:37.645495Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.645784Z	    6 Execute	UPDATE `matomo_option` SET option_value = '1.0', autoload = '1' WHERE option_name = 'version_RssWidget'
+2019-12-27T11:36:37.646810Z	    6 Close stmt
+2019-12-27T11:36:37.647354Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.647591Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_RssWidget', '1.0', '1')
+2019-12-27T11:36:37.653975Z	    6 Close stmt
+2019-12-27T11:36:37.654904Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.655341Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Feedback'
+2019-12-27T11:36:37.656498Z	    6 Close stmt
+2019-12-27T11:36:37.657377Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.658102Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Feedback', '3.13.0', '1')
+2019-12-27T11:36:37.663214Z	    6 Close stmt
+2019-12-27T11:36:37.664012Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.664465Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_TwoFactorAuth'
+2019-12-27T11:36:37.665571Z	    6 Close stmt
+2019-12-27T11:36:37.666084Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.666874Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_TwoFactorAuth', '3.13.0', '1')
+2019-12-27T11:36:37.670739Z	    6 Close stmt
+2019-12-27T11:36:37.671312Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.671932Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CoreUpdater'
+2019-12-27T11:36:37.672642Z	    6 Close stmt
+2019-12-27T11:36:37.673055Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.674032Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CoreUpdater', '3.13.0', '1')
+2019-12-27T11:36:37.679415Z	    6 Close stmt
+2019-12-27T11:36:37.680329Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.680960Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CoreConsole'
+2019-12-27T11:36:37.682123Z	    6 Close stmt
+2019-12-27T11:36:37.683190Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.683588Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CoreConsole', '3.13.0', '1')
+2019-12-27T11:36:37.691357Z	    6 Query	CREATE TABLE IF NOT EXISTS `matomo_report` ( `idreport` INT(11) NOT NULL AUTO_INCREMENT,
+					    `idsite` INTEGER(11) NOT NULL,
+					    `login` VARCHAR(100) NOT NULL,
+					    `description` VARCHAR(255) NOT NULL,
+					    `idsegment` INT(11),
+					    `period` VARCHAR(10) NOT NULL,
+					    `hour` tinyint NOT NULL default 0,
+					    `type` VARCHAR(10) NOT NULL,
+					    `format` VARCHAR(10) NOT NULL,
+					    `reports` TEXT NOT NULL,
+					    `parameters` TEXT NULL,
+					    `ts_created` TIMESTAMP NULL,
+					    `ts_last_sent` TIMESTAMP NULL,
+					    `deleted` tinyint(4) NOT NULL default 0,
+					    `evolution_graph_within_period` TINYINT(4) NOT NULL DEFAULT 0,
+					    `evolution_graph_period_n` INT(11) NOT NULL,
+					    `period_param` VARCHAR(10) NULL,
+					    PRIMARY KEY (`idreport`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+2019-12-27T11:36:37.701752Z	    6 Query	CREATE TABLE IF NOT EXISTS `matomo_report_subscriptions` ( `idreport` INT(11) NOT NULL,
+					    `token` VARCHAR(100) NULL,
+					    `email` VARCHAR(100) NOT NULL,
+					    `ts_subscribed` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+					    `ts_unsubscribed` TIMESTAMP NULL,
+					    PRIMARY KEY (`idreport`, `email`),
+					    UNIQUE INDEX `unique_token` (`token`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+2019-12-27T11:36:37.711732Z	    6 Close stmt
+2019-12-27T11:36:37.712099Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.712984Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_ScheduledReports'
+2019-12-27T11:36:37.713716Z	    6 Close stmt
+2019-12-27T11:36:37.714031Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.714847Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_ScheduledReports', '3.13.0', '1')
+2019-12-27T11:36:37.719561Z	    6 Close stmt
+2019-12-27T11:36:37.720033Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.720243Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_UserCountryMap'
+2019-12-27T11:36:37.720992Z	    6 Close stmt
+2019-12-27T11:36:37.721235Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.722122Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_UserCountryMap', '3.13.0', '1')
+2019-12-27T11:36:37.727056Z	    6 Close stmt
+2019-12-27T11:36:37.727580Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:37.728298Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Live'
+2019-12-27T11:36:37.728999Z	    6 Close stmt
+2019-12-27T11:36:37.729359Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:37.729876Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Live', '3.13.0', '1')
+2019-12-27T11:36:37.735396Z	    6 Close stmt
+2019-12-27T11:36:37.736123Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.736297Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.737577Z	    6 Reset stmt
+2019-12-27T11:36:37.738359Z	    6 Close stmt
+2019-12-27T11:36:37.739013Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.739505Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.740974Z	    6 Reset stmt
+2019-12-27T11:36:37.742040Z	    6 Query	ALTER TABLE matomo_log_link_visit_action ADD COLUMN custom_var_k1 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v1 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.762020Z	    6 Close stmt
+2019-12-27T11:36:37.762941Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.763569Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.764731Z	    6 Reset stmt
+2019-12-27T11:36:37.765635Z	    6 Query	ALTER TABLE matomo_log_link_visit_action ADD COLUMN custom_var_k2 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v2 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.784382Z	    6 Close stmt
+2019-12-27T11:36:37.785367Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.785806Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.786845Z	    6 Reset stmt
+2019-12-27T11:36:37.787750Z	    6 Query	ALTER TABLE matomo_log_link_visit_action ADD COLUMN custom_var_k3 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v3 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.806587Z	    6 Close stmt
+2019-12-27T11:36:37.807275Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.807996Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.809163Z	    6 Reset stmt
+2019-12-27T11:36:37.809616Z	    6 Query	ALTER TABLE matomo_log_link_visit_action ADD COLUMN custom_var_k4 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v4 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.827375Z	    6 Close stmt
+2019-12-27T11:36:37.827837Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.827988Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:36:37.828834Z	    6 Reset stmt
+2019-12-27T11:36:37.829840Z	    6 Query	ALTER TABLE matomo_log_link_visit_action ADD COLUMN custom_var_k5 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v5 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.848020Z	    6 Close stmt
+2019-12-27T11:36:37.848564Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.849134Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.851211Z	    6 Reset stmt
+2019-12-27T11:36:37.852018Z	    6 Close stmt
+2019-12-27T11:36:37.852940Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.853346Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.854678Z	    6 Reset stmt
+2019-12-27T11:36:37.855632Z	    6 Query	ALTER TABLE matomo_log_visit ADD COLUMN custom_var_k1 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v1 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.876097Z	    6 Close stmt
+2019-12-27T11:36:37.876661Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.877009Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.878256Z	    6 Reset stmt
+2019-12-27T11:36:37.879067Z	    6 Query	ALTER TABLE matomo_log_visit ADD COLUMN custom_var_k2 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v2 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.898372Z	    6 Close stmt
+2019-12-27T11:36:37.899025Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.899441Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.901245Z	    6 Reset stmt
+2019-12-27T11:36:37.902197Z	    6 Query	ALTER TABLE matomo_log_visit ADD COLUMN custom_var_k3 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v3 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.924230Z	    6 Close stmt
+2019-12-27T11:36:37.924942Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.925939Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.927158Z	    6 Reset stmt
+2019-12-27T11:36:37.928040Z	    6 Query	ALTER TABLE matomo_log_visit ADD COLUMN custom_var_k4 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v4 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.945988Z	    6 Close stmt
+2019-12-27T11:36:37.946591Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.946947Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:36:37.948398Z	    6 Reset stmt
+2019-12-27T11:36:37.949472Z	    6 Query	ALTER TABLE matomo_log_visit ADD COLUMN custom_var_k5 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v5 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.972831Z	    6 Close stmt
+2019-12-27T11:36:37.973491Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:37.974047Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:37.975217Z	    6 Reset stmt
+2019-12-27T11:36:37.975961Z	    6 Close stmt
+2019-12-27T11:36:37.976581Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:37.976947Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:37.978048Z	    6 Reset stmt
+2019-12-27T11:36:37.978908Z	    6 Query	ALTER TABLE matomo_log_conversion ADD COLUMN custom_var_k1 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v1 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:37.996864Z	    6 Close stmt
+2019-12-27T11:36:37.998049Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:37.998246Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:37.999383Z	    6 Reset stmt
+2019-12-27T11:36:37.999880Z	    6 Query	ALTER TABLE matomo_log_conversion ADD COLUMN custom_var_k2 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v2 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:38.018216Z	    6 Close stmt
+2019-12-27T11:36:38.019014Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:38.019648Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:38.020787Z	    6 Reset stmt
+2019-12-27T11:36:38.021595Z	    6 Query	ALTER TABLE matomo_log_conversion ADD COLUMN custom_var_k3 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v3 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:38.042313Z	    6 Close stmt
+2019-12-27T11:36:38.042978Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:38.043776Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:38.044911Z	    6 Reset stmt
+2019-12-27T11:36:38.045587Z	    6 Query	ALTER TABLE matomo_log_conversion ADD COLUMN custom_var_k4 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v4 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:38.064108Z	    6 Close stmt
+2019-12-27T11:36:38.064760Z	    6 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:38.065126Z	    6 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:36:38.066329Z	    6 Reset stmt
+2019-12-27T11:36:38.067815Z	    6 Query	ALTER TABLE matomo_log_conversion ADD COLUMN custom_var_k5 VARCHAR(200) DEFAULT NULL,ADD COLUMN custom_var_v5 VARCHAR(200) DEFAULT NULL
+2019-12-27T11:36:38.085187Z	    6 Close stmt
+2019-12-27T11:36:38.085658Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.086533Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CustomVariables'
+2019-12-27T11:36:38.087685Z	    6 Close stmt
+2019-12-27T11:36:38.088148Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.088810Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CustomVariables', '3.13.0', '1')
+2019-12-27T11:36:38.095660Z	    6 Query	CREATE TABLE IF NOT EXISTS `matomo_privacy_logdata_anonymizations` (
+                  `idlogdata_anonymization` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                  `idsites` TEXT NULL DEFAULT NULL,
+                  `date_start` DATETIME NOT NULL,
+                  `date_end` DATETIME NOT NULL,
+                  `anonymize_ip` TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
+                  `anonymize_location` TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
+                  `anonymize_userid` TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
+                  `unset_visit_columns` TEXT NOT NULL DEFAULT '',
+                  `unset_link_visit_action_columns` TEXT NOT NULL DEFAULT '',
+                  `output` MEDIUMTEXT NULL DEFAULT NULL,
+                  `scheduled_date` DATETIME NULL,
+                  `job_start_date` DATETIME NULL,
+                  `job_finish_date` DATETIME NULL,
+                  `requester` VARCHAR(100) NOT NULL DEFAULT '',
+                  PRIMARY KEY(`idlogdata_anonymization`), KEY(`job_start_date`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+2019-12-27T11:36:38.108292Z	    6 Close stmt
+2019-12-27T11:36:38.108788Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.109404Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_PrivacyManager'
+2019-12-27T11:36:38.110158Z	    6 Close stmt
+2019-12-27T11:36:38.110625Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.110852Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_PrivacyManager', '3.13.0', '1')
+2019-12-27T11:36:38.115916Z	    6 Close stmt
+2019-12-27T11:36:38.116500Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.116864Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_ImageGraph'
+2019-12-27T11:36:38.118236Z	    6 Close stmt
+2019-12-27T11:36:38.119278Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.120065Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_ImageGraph', '3.13.0', '1')
+2019-12-27T11:36:38.126353Z	    6 Close stmt
+2019-12-27T11:36:38.126876Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.127416Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Annotations'
+2019-12-27T11:36:38.128852Z	    6 Close stmt
+2019-12-27T11:36:38.129646Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.130454Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Annotations', '3.13.0', '1')
+2019-12-27T11:36:38.136271Z	    6 Close stmt
+2019-12-27T11:36:38.137766Z	    6 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:36:38.138250Z	    6 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'MobileMessaging_DelegatedManagement'
+2019-12-27T11:36:38.139046Z	    6 Reset stmt
+2019-12-27T11:36:38.139562Z	    6 Close stmt
+2019-12-27T11:36:38.140037Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.140427Z	    6 Execute	UPDATE `matomo_option` SET option_value = 'false', autoload = '0' WHERE option_name = 'MobileMessaging_DelegatedManagement'
+2019-12-27T11:36:38.141182Z	    6 Close stmt
+2019-12-27T11:36:38.141632Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.142017Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('MobileMessaging_DelegatedManagement', 'false', '0')
+2019-12-27T11:36:38.144271Z	    6 Close stmt
+2019-12-27T11:36:38.144848Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.145561Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_MobileMessaging'
+2019-12-27T11:36:38.146647Z	    6 Close stmt
+2019-12-27T11:36:38.147758Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.148323Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_MobileMessaging', '3.13.0', '1')
+2019-12-27T11:36:38.154209Z	    6 Close stmt
+2019-12-27T11:36:38.155169Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.155504Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Overlay'
+2019-12-27T11:36:38.156713Z	    6 Close stmt
+2019-12-27T11:36:38.157484Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.158077Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Overlay', '3.13.0', '1')
+2019-12-27T11:36:38.163718Z	    6 Query	CREATE TABLE IF NOT EXISTS `matomo_segment` ( `idsegment` INT(11) NOT NULL AUTO_INCREMENT,
+					     `name` VARCHAR(255) NOT NULL,
+					     `definition` TEXT NOT NULL,
+					     `login` VARCHAR(100) NOT NULL,
+					     `enable_all_users` tinyint(4) NOT NULL default 0,
+					     `enable_only_idsite` INTEGER(11) NULL,
+					     `auto_archive` tinyint(4) NOT NULL default 0,
+					     `ts_created` TIMESTAMP NULL,
+					     `ts_last_edit` TIMESTAMP NULL,
+					     `deleted` tinyint(4) NOT NULL default 0,
+					     PRIMARY KEY (`idsegment`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+2019-12-27T11:36:38.174115Z	    6 Close stmt
+2019-12-27T11:36:38.174957Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.175410Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_SegmentEditor'
+2019-12-27T11:36:38.176520Z	    6 Close stmt
+2019-12-27T11:36:38.177151Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.177765Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_SegmentEditor', '3.13.0', '1')
+2019-12-27T11:36:38.183068Z	    6 Close stmt
+2019-12-27T11:36:38.184016Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.184857Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Insights'
+2019-12-27T11:36:38.186417Z	    6 Close stmt
+2019-12-27T11:36:38.187254Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.187663Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Insights', '3.13.0', '1')
+2019-12-27T11:36:38.193303Z	    6 Close stmt
+2019-12-27T11:36:38.194274Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.194923Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Morpheus'
+2019-12-27T11:36:38.195736Z	    6 Close stmt
+2019-12-27T11:36:38.196408Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.196735Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Morpheus', '3.13.0', '1')
+2019-12-27T11:36:38.202178Z	    6 Close stmt
+2019-12-27T11:36:38.202908Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.203362Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Contents'
+2019-12-27T11:36:38.204431Z	    6 Close stmt
+2019-12-27T11:36:38.205127Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.205559Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Contents', '3.13.0', '1')
+2019-12-27T11:36:38.209653Z	    6 Close stmt
+2019-12-27T11:36:38.210379Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.210883Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_BulkTracking'
+2019-12-27T11:36:38.211900Z	    6 Close stmt
+2019-12-27T11:36:38.212584Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.213000Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_BulkTracking', '3.13.0', '1')
+2019-12-27T11:36:38.219167Z	    6 Close stmt
+2019-12-27T11:36:38.220320Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.220861Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Resolution'
+2019-12-27T11:36:38.221986Z	    6 Close stmt
+2019-12-27T11:36:38.222834Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.223145Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Resolution', '3.13.0', '1')
+2019-12-27T11:36:38.228784Z	    6 Close stmt
+2019-12-27T11:36:38.229331Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.229644Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_DevicePlugins'
+2019-12-27T11:36:38.230809Z	    6 Close stmt
+2019-12-27T11:36:38.231464Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.231936Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_DevicePlugins', '3.13.0', '1')
+2019-12-27T11:36:38.237039Z	    6 Close stmt
+2019-12-27T11:36:38.237726Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.238059Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Heartbeat'
+2019-12-27T11:36:38.239256Z	    6 Close stmt
+2019-12-27T11:36:38.239958Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.240499Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Heartbeat', '3.13.0', '1')
+2019-12-27T11:36:38.246057Z	    6 Close stmt
+2019-12-27T11:36:38.246803Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.247251Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Marketplace'
+2019-12-27T11:36:38.248433Z	    6 Close stmt
+2019-12-27T11:36:38.249149Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.249480Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Marketplace', '3.13.0', '1')
+2019-12-27T11:36:38.256996Z	    6 Close stmt
+2019-12-27T11:36:38.258076Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.258505Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_ProfessionalServices'
+2019-12-27T11:36:38.259709Z	    6 Close stmt
+2019-12-27T11:36:38.260687Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.261251Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_ProfessionalServices', '3.13.0', '1')
+2019-12-27T11:36:38.268692Z	    6 Close stmt
+2019-12-27T11:36:38.269518Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.269758Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_UserId'
+2019-12-27T11:36:38.270341Z	    6 Close stmt
+2019-12-27T11:36:38.270737Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.270982Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_UserId', '3.13.0', '1')
+2019-12-27T11:36:38.277063Z	    6 Close stmt
+2019-12-27T11:36:38.277512Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.277841Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_CustomPiwikJs'
+2019-12-27T11:36:38.278985Z	    6 Close stmt
+2019-12-27T11:36:38.279756Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.280226Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_CustomPiwikJs', '3.13.0', '1')
+2019-12-27T11:36:38.285789Z	    6 Close stmt
+2019-12-27T11:36:38.286768Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.287659Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '1' WHERE option_name = 'version_Tour'
+2019-12-27T11:36:38.288670Z	    6 Close stmt
+2019-12-27T11:36:38.289362Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.289970Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('version_Tour', '3.13.0', '1')
+2019-12-27T11:36:38.295091Z	    6 Close stmt
+2019-12-27T11:36:38.295828Z	    6 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:36:38.296311Z	    6 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:36:38.297178Z	    6 Reset stmt
+2019-12-27T11:36:38.299112Z	    6 Close stmt
+2019-12-27T11:36:38.300104Z	    6 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:36:38.300503Z	    6 Execute	SELECT * FROM matomo_user WHERE login = 'anonymous'
+2019-12-27T11:36:38.301529Z	    6 Reset stmt
+2019-12-27T11:36:38.303094Z	    6 Close stmt
+2019-12-27T11:36:38.303367Z	    6 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:36:38.303499Z	    6 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LastTimeChecked'
+2019-12-27T11:36:38.303899Z	    6 Reset stmt
+2019-12-27T11:36:38.304640Z	    6 Close stmt
+2019-12-27T11:36:38.305047Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:38.305229Z	    6 Execute	UPDATE `matomo_option` SET option_value = '1577446598', autoload = '1' WHERE option_name = 'UpdateCheck_LastTimeChecked'
+2019-12-27T11:36:38.305797Z	    6 Close stmt
+2019-12-27T11:36:38.306214Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:38.306674Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('UpdateCheck_LastTimeChecked', '1577446598', '1')
+2019-12-27T11:36:38.310557Z	    6 Close stmt
+2019-12-27T11:36:38.310909Z	    6 Prepare	SELECT @@VERSION
+2019-12-27T11:36:38.311238Z	    6 Execute	SELECT @@VERSION
+2019-12-27T11:36:38.311827Z	    6 Reset stmt
+2019-12-27T11:36:38.314420Z	    6 Close stmt
+2019-12-27T11:36:38.314786Z	    6 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:36:38.315109Z	    6 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'SitesManager_DefaultTimezone'
+2019-12-27T11:36:38.315806Z	    6 Reset stmt
+2019-12-27T11:36:39.256059Z	    6 Close stmt
+2019-12-27T11:36:39.256618Z	    6 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:36:39.257064Z	    6 Execute	UPDATE `matomo_option` SET option_value = '3.13.0', autoload = '0' WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:36:39.258536Z	    6 Close stmt
+2019-12-27T11:36:39.259544Z	    6 Prepare	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES (?, ?, ?)
+2019-12-27T11:36:39.260077Z	    6 Execute	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('UpdateCheck_LatestVersion', '3.13.0', '0')
+2019-12-27T11:36:39.272036Z	    6 Close stmt
+2019-12-27T11:36:39.272376Z	    6 Prepare	SELECT login, email, token_auth, superuser_access
+                                FROM matomo_user
+                                WHERE superuser_access = 1
+                                ORDER BY date_registered ASC
+2019-12-27T11:36:39.272829Z	    6 Execute	SELECT login, email, token_auth, superuser_access
+                                FROM matomo_user
+                                WHERE superuser_access = 1
+                                ORDER BY date_registered ASC
+2019-12-27T11:36:39.273501Z	    6 Reset stmt
+2019-12-27T11:36:39.280399Z	    6 Close stmt
+2019-12-27T11:36:39.281371Z	    6 Prepare	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = ?
+2019-12-27T11:36:39.281558Z	    6 Execute	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = 'anonymous'
+2019-12-27T11:36:39.282753Z	    6 Reset stmt
+2019-12-27T11:36:39.316079Z	    6 Close stmt
+2019-12-27T11:36:39.316521Z	    6 Prepare	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = ?
+2019-12-27T11:36:39.317291Z	    6 Execute	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = 'anonymous'
+2019-12-27T11:36:39.318033Z	    6 Reset stmt
+2019-12-27T11:36:39.546349Z	    6 Close stmt
+2019-12-27T11:36:39.546559Z	    6 Quit

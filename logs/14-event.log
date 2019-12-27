@@ -1,0 +1,21 @@
+2019-12-27T11:55:01.509919Z	   93 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:55:01.510405Z	   93 Query	SET NAMES utf8
+2019-12-27T11:55:01.511449Z	   93 Query	SELECT visit_last_action_time, visit_first_action_time, idvisitor, idvisit, user_id, visit_exit_idaction_url, visit_exit_idaction_name, visitor_returning, visitor_days_since_first, visitor_days_since_order, visitor_count_visits, visit_goal_buyer, location_country, location_region, location_city, location_latitude, location_longitude, referer_name, referer_keyword, referer_type, idsite, visit_entry_idaction_url, visit_total_actions, visit_total_interactions, visit_total_searches, referer_url, config_device_brand, config_device_model, config_device_type, visit_total_events, visit_total_time, location_ip, location_browser_lang, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5   FROM matomo_log_visit WHERE idsite = '1' AND visit_last_action_time <= '2019-12-27 12:25:01' AND idvisitor = '
+��n�%~'
+                ORDER BY visit_last_action_time DESC
+                LIMIT 1
+2019-12-27T11:55:01.516140Z	   93 Query	SELECT `idaction`, `type`, `name` FROM matomo_log_action WHERE ( hash = CRC32('example.com') AND name = 'example.com' AND type = '10' )  OR ( hash = CRC32('Logo') AND name = 'Logo' AND type = '11' )  OR ( hash = CRC32('Homepage') AND name = 'Homepage' AND type = '10' )
+2019-12-27T11:55:01.517158Z	   93 Query	INSERT INTO matomo_log_action (name, hash, type, url_prefix) VALUES ('example.com',CRC32('example.com'),'10','0')
+2019-12-27T11:55:01.519913Z	   93 Query	SELECT idaction, type, name FROM matomo_log_action  WHERE ( hash = CRC32('example.com') AND name = 'example.com' AND type = '10' ) ORDER BY idaction ASC LIMIT 1
+2019-12-27T11:55:01.521250Z	   93 Query	INSERT INTO matomo_log_action (name, hash, type, url_prefix) VALUES ('Logo',CRC32('Logo'),'11',NULL)
+2019-12-27T11:55:01.524369Z	   93 Query	SELECT idaction, type, name FROM matomo_log_action  WHERE ( hash = CRC32('Logo') AND name = 'Logo' AND type = '11' ) ORDER BY idaction ASC LIMIT 1
+2019-12-27T11:55:01.525206Z	   93 Query	INSERT INTO matomo_log_action (name, hash, type, url_prefix) VALUES ('Homepage',CRC32('Homepage'),'10',NULL)
+2019-12-27T11:55:01.526307Z	   93 Query	SELECT idaction, type, name FROM matomo_log_action  WHERE ( hash = CRC32('Homepage') AND name = 'Homepage' AND type = '10' ) ORDER BY idaction ASC LIMIT 1
+2019-12-27T11:55:01.527704Z	   93 Query	UPDATE matomo_log_visit SET idvisitor = '
+��n�%~', visit_last_action_time = '2019-12-27 11:55:01',  visit_total_actions = visit_total_actions + 1 ,  visit_total_events = visit_total_events + 1 , visit_total_time = '133' WHERE idsite = '1' AND idvisit = '1'
+2019-12-27T11:55:01.530639Z	   93 Query	INSERT INTO matomo_log_link_visit_action (idvisit, idsite, idvisitor, idaction_url, idaction_url_ref, idaction_name_ref, server_time, idpageview, interaction_position, time_spent_ref_action, idaction_event_action, idaction_event_category) VALUES ('1','1','
+��n�%~','3','2','1','2019-12-27 11:55:01','r3If0k','1','132','4','5')
+2019-12-27T11:55:01.538308Z	   93 Query	SELECT option_name, option_value FROM `matomo_option` WHERE option_name LIKE 'report_to_invalidate_1_2019-12-27%'
+2019-12-27T11:55:01.539492Z	   93 Query	UPDATE `matomo_option` SET option_value = '1', autoload = '0' WHERE option_name = 'report_to_invalidate_1_2019-12-27_71'
+2019-12-27T11:55:01.540395Z	   93 Query	INSERT IGNORE INTO `matomo_option` (option_name, option_value, autoload) VALUES ('report_to_invalidate_1_2019-12-27_71', '1', '0')
+2019-12-27T11:55:01.543512Z	   93 Quit

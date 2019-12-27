@@ -1,0 +1,28 @@
+method: POST
+host: http://127.0.0.1:8080
+path: matomo.php
+query:
+  e_c: Homepage
+  e_a: Logo
+  idsite: 1
+  rec: 1
+  r: 065385
+  h: 16
+  m: 18
+  s: 8
+  url: http://example.com
+  urlref: http://example.com
+  _id: 0ac6e6af6ec5257e
+  _idts: 1577387507
+  _idvc: 1
+  _idn: 0
+  _refts: 0
+  _viewts: 1577387507
+  send_image: 1
+  cookie: 1
+  res: 1440x900
+  gt_ms: 2
+  pv_id: r3If0k
+header:
+  Origin: http://example.com
+  Content-Type: application/json

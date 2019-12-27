@@ -1,0 +1,99 @@
+2019-12-27T11:37:54.051676Z	    7 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:37:54.052140Z	    7 Query	SET NAMES utf8
+2019-12-27T11:37:54.052448Z	    7 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:37:54.063490Z	    7 Prepare	SELECT DATABASE()
+2019-12-27T11:37:54.064295Z	    7 Execute	SELECT DATABASE()
+2019-12-27T11:37:54.065364Z	    7 Reset stmt
+2019-12-27T11:37:54.066619Z	    7 Close stmt
+2019-12-27T11:37:54.067063Z	    7 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:37:54.067342Z	    7 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:37:54.068644Z	    7 Reset stmt
+2019-12-27T11:37:54.068955Z	    7 Close stmt
+2019-12-27T11:37:54.069704Z	    7 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:37:54.070030Z	    7 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:37:54.071649Z	    7 Reset stmt
+2019-12-27T11:37:54.087507Z	    7 Close stmt
+2019-12-27T11:37:54.089359Z	    7 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:37:54.090517Z	    7 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:37:54.091994Z	    7 Reset stmt
+2019-12-27T11:37:54.095347Z	    7 Close stmt
+2019-12-27T11:37:54.096414Z	    7 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:37:54.098062Z	    7 Execute	SELECT * FROM matomo_user WHERE login = 'anonymous'
+2019-12-27T11:37:54.099466Z	    7 Reset stmt
+2019-12-27T11:37:54.124982Z	    7 Close stmt
+2019-12-27T11:37:54.126247Z	    7 Prepare	SELECT login, email, token_auth, superuser_access
+                                FROM matomo_user
+                                WHERE superuser_access = 1
+                                ORDER BY date_registered ASC
+2019-12-27T11:37:54.127143Z	    7 Execute	SELECT login, email, token_auth, superuser_access
+                                FROM matomo_user
+                                WHERE superuser_access = 1
+                                ORDER BY date_registered ASC
+2019-12-27T11:37:54.128280Z	    7 Reset stmt
+2019-12-27T11:37:54.159416Z	    7 Close stmt
+2019-12-27T11:37:54.160141Z	    7 Prepare	SELECT count(*) FROM matomo_user WHERE login = ?
+2019-12-27T11:37:54.160819Z	    7 Execute	SELECT count(*) FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:37:54.161840Z	    7 Close stmt
+2019-12-27T11:37:54.162575Z	    7 Prepare	SELECT count(*) FROM matomo_user WHERE email = ?
+2019-12-27T11:37:54.163458Z	    7 Execute	SELECT count(*) FROM matomo_user WHERE email = 'admin@example.com'
+2019-12-27T11:37:54.235686Z	    7 Close stmt
+2019-12-27T11:37:54.236917Z	    7 Prepare	INSERT INTO `matomo_user` (`login`, `password`, `alias`, `email`, `token_auth`, `date_registered`, `superuser_access`, `ts_password_modified`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2019-12-27T11:37:54.237896Z	    7 Execute	INSERT INTO `matomo_user` (`login`, `password`, `alias`, `email`, `token_auth`, `date_registered`, `superuser_access`, `ts_password_modified`) VALUES ('admin', '$2y$10$5OD1iATpASTyMRM7d6lAbucdacE4j6wxKnQk3mUWXyGdBqRlwdrBG', 'admin', 'admin@example.com', '574398d135b3ceb377235bed396a1c46', '2019-12-27 11:37:54', '0', '2019-12-27 11:37:54')
+2019-12-27T11:37:54.248472Z	    7 Close stmt
+2019-12-27T11:37:54.249330Z	    7 Prepare	SELECT count(*) FROM matomo_user WHERE login = ?
+2019-12-27T11:37:54.249894Z	    7 Execute	SELECT count(*) FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:37:54.251032Z	    7 Close stmt
+2019-12-27T11:37:54.251616Z	    7 Prepare	DELETE FROM matomo_access WHERE login = ?
+2019-12-27T11:37:54.252045Z	    7 Execute	DELETE FROM matomo_access WHERE login = 'admin'
+2019-12-27T11:37:54.253130Z	    7 Close stmt
+2019-12-27T11:37:54.254245Z	    7 Prepare	UPDATE `matomo_user` SET `superuser_access` = ? WHERE `login` = ?
+2019-12-27T11:37:54.254774Z	    7 Execute	UPDATE `matomo_user` SET `superuser_access` = '1' WHERE `login` = 'admin'
+2019-12-27T11:37:54.260672Z	    7 Close stmt
+2019-12-27T11:37:54.260921Z	    7 Quit
+2019-12-27T11:37:54.281250Z	    8 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:37:54.281923Z	    8 Query	SET NAMES utf8
+2019-12-27T11:37:54.282245Z	    8 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:37:54.283085Z	    8 Prepare	SELECT DATABASE()
+2019-12-27T11:37:54.283532Z	    8 Execute	SELECT DATABASE()
+2019-12-27T11:37:54.284164Z	    8 Reset stmt
+2019-12-27T11:37:54.284596Z	    8 Close stmt
+2019-12-27T11:37:54.285332Z	    8 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:37:54.285853Z	    8 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:37:54.286858Z	    8 Reset stmt
+2019-12-27T11:37:54.287482Z	    8 Close stmt
+2019-12-27T11:37:54.288259Z	    8 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:37:54.288712Z	    8 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:37:54.289234Z	    8 Reset stmt
+2019-12-27T11:37:54.291252Z	    8 Close stmt
+2019-12-27T11:37:54.291725Z	    8 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:37:54.292072Z	    8 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:37:54.292828Z	    8 Reset stmt
+2019-12-27T11:37:54.293508Z	    8 Close stmt
+2019-12-27T11:37:54.294034Z	    8 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:37:54.294632Z	    8 Execute	SELECT * FROM matomo_user WHERE login = 'anonymous'
+2019-12-27T11:37:54.295290Z	    8 Reset stmt
+2019-12-27T11:37:54.324488Z	    8 Close stmt
+2019-12-27T11:37:54.325208Z	    8 Prepare	SELECT idsite FROM matomo_site
+2019-12-27T11:37:54.325590Z	    8 Execute	SELECT idsite FROM matomo_site
+2019-12-27T11:37:54.326970Z	    8 Reset stmt
+2019-12-27T11:37:54.332405Z	    8 Close stmt
+2019-12-27T11:37:54.333078Z	    8 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:37:54.333298Z	    8 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'SitesManager_DefaultTimezone'
+2019-12-27T11:37:54.334316Z	    8 Reset stmt
+2019-12-27T11:37:54.339730Z	    8 Close stmt
+2019-12-27T11:37:54.340391Z	    8 Prepare	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = ?
+2019-12-27T11:37:54.340847Z	    8 Execute	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = 'anonymous'
+2019-12-27T11:37:54.342222Z	    8 Reset stmt
+2019-12-27T11:37:54.342724Z	    8 Close stmt
+2019-12-27T11:37:54.343061Z	    8 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:37:54.343289Z	    8 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:37:54.385375Z	    8 Close stmt
+2019-12-27T11:37:54.385824Z	    8 Prepare	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = ?
+2019-12-27T11:37:54.386530Z	    8 Execute	SELECT access, t2.idsite FROM matomo_access as t1
+				JOIN matomo_site as t2 USING (idsite) WHERE login = 'anonymous'
+2019-12-27T11:37:54.387411Z	    8 Reset stmt
+2019-12-27T11:37:54.394889Z	    8 Close stmt
+2019-12-27T11:37:54.395022Z	    8 Quit

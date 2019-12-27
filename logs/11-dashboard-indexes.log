@@ -1,0 +1,1573 @@
+2019-12-27T11:51:15.588741Z	   74 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:51:15.589332Z	   74 Query	SET NAMES utf8
+2019-12-27T11:51:15.589846Z	   74 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:51:15.591821Z	   74 Prepare	SELECT DATABASE()
+2019-12-27T11:51:15.593310Z	   74 Execute	SELECT DATABASE()
+2019-12-27T11:51:15.600469Z	   74 Reset stmt
+2019-12-27T11:51:15.603955Z	   74 Close stmt
+2019-12-27T11:51:15.605621Z	   74 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:15.606206Z	   74 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:15.608760Z	   74 Reset stmt
+2019-12-27T11:51:15.611344Z	   74 Close stmt
+2019-12-27T11:51:15.613453Z	   74 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:15.614409Z	   74 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:51:15.619327Z	   74 Reset stmt
+2019-12-27T11:51:15.636215Z	   74 Close stmt
+2019-12-27T11:51:15.639831Z	   74 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:15.640521Z	   74 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:51:15.641307Z	   74 Reset stmt
+2019-12-27T11:51:15.642341Z	   74 Close stmt
+2019-12-27T11:51:15.643469Z	   74 Prepare	SELECT data FROM matomo_session WHERE id = ? AND modified + lifetime >= ?
+2019-12-27T11:51:15.644302Z	   74 Execute	SELECT data FROM matomo_session WHERE id = '6e81846ace3a692c795ad788f69ae878' AND modified + lifetime >= '1577447475'
+2019-12-27T11:51:15.645821Z	   74 Close stmt
+2019-12-27T11:51:15.647394Z	   74 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:15.648202Z	   74 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:15.651424Z	   74 Reset stmt
+2019-12-27T11:51:15.656126Z	   74 Close stmt
+2019-12-27T11:51:15.660032Z	   74 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:15.662106Z	   74 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:15.665190Z	   74 Reset stmt
+2019-12-27T11:51:15.666566Z	   74 Close stmt
+2019-12-27T11:51:15.667704Z	   74 Prepare	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = ? and user_login = ?
+2019-12-27T11:51:15.668165Z	   74 Execute	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = 'TwoFactorAuth' and user_login = ''
+2019-12-27T11:51:15.670815Z	   74 Reset stmt
+2019-12-27T11:51:15.672975Z	   74 Close stmt
+2019-12-27T11:51:15.676006Z	   74 Prepare	SELECT * FROM matomo_site
+                               WHERE idsite = ?
+2019-12-27T11:51:15.700456Z	   74 Execute	SELECT * FROM matomo_site
+                               WHERE idsite = '1'
+2019-12-27T11:51:15.713181Z	   74 Close stmt
+2019-12-27T11:51:15.714089Z	   74 Prepare	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:15.714812Z	   74 Execute	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:15.716066Z	   74 Reset stmt
+2019-12-27T11:51:15.716729Z	   74 Close stmt
+2019-12-27T11:51:15.718318Z	   74 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:15.718996Z	   74 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-27 11:51:15'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:15.721957Z	   74 Reset stmt
+2019-12-27T11:51:15.723695Z	   74 Close stmt
+2019-12-27T11:51:15.730187Z	   74 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+				AND  log_visit.visit_last_action_time <= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:15.734037Z	   74 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-26 03:00:00'
+				AND  log_visit.visit_last_action_time <= '2019-12-27 11:51:14'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:15.736654Z	   74 Reset stmt
+2019-12-27T11:51:15.744562Z	   74 Close stmt
+2019-12-27T11:51:15.746328Z	   74 Prepare	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:15.746912Z	   74 Execute	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:15.749090Z	   74 Reset stmt
+2019-12-27T11:51:15.750710Z	   74 Close stmt
+2019-12-27T11:51:15.752551Z	   74 Prepare	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:15.753891Z	   74 Execute	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:15.755827Z	   74 Reset stmt
+2019-12-27T11:51:15.757024Z	   74 Close stmt
+2019-12-27T11:51:15.759410Z	   74 Prepare	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:15.760737Z	   74 Execute	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:15.763086Z	   74 Reset stmt
+2019-12-27T11:51:15.766493Z	   74 Close stmt
+2019-12-27T11:51:15.769468Z	   74 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:15.770456Z	   74 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:51:15.774934Z	   74 Close stmt
+2019-12-27T11:51:15.776740Z	   74 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:15.778609Z	   74 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:15.781222Z	   74 Reset stmt
+2019-12-27T11:51:15.782861Z	   74 Close stmt
+2019-12-27T11:51:15.785803Z	   74 Prepare	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE modified = ?,lifetime = ?,data = ?
+2019-12-27T11:51:15.787639Z	   74 Execute	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES ('6e81846ace3a692c795ad788f69ae878','1577447475','1209600','a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTEwNzU7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}') ON DUPLICATE KEY UPDATE modified = '1577447475',lifetime = '1209600',data = 'a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTEwNzU7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}'
+2019-12-27T11:51:15.793201Z	   74 Close stmt
+2019-12-27T11:51:15.798878Z	   74 Quit
+2019-12-27T11:51:19.211689Z	   75 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:51:19.212378Z	   75 Query	SET NAMES utf8
+2019-12-27T11:51:19.213686Z	   75 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:51:19.215468Z	   75 Prepare	SELECT DATABASE()
+2019-12-27T11:51:19.216544Z	   75 Execute	SELECT DATABASE()
+2019-12-27T11:51:19.217138Z	   75 Reset stmt
+2019-12-27T11:51:19.217869Z	   75 Close stmt
+2019-12-27T11:51:19.218817Z	   75 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:19.219241Z	   75 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:19.221947Z	   75 Reset stmt
+2019-12-27T11:51:19.223669Z	   75 Close stmt
+2019-12-27T11:51:19.224892Z	   75 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:19.225359Z	   75 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:51:19.226287Z	   75 Reset stmt
+2019-12-27T11:51:19.235981Z	   75 Close stmt
+2019-12-27T11:51:19.237103Z	   75 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:19.239293Z	   75 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:51:19.242247Z	   75 Reset stmt
+2019-12-27T11:51:19.245114Z	   75 Close stmt
+2019-12-27T11:51:19.246367Z	   75 Prepare	SELECT data FROM matomo_session WHERE id = ? AND modified + lifetime >= ?
+2019-12-27T11:51:19.246881Z	   75 Execute	SELECT data FROM matomo_session WHERE id = '6e81846ace3a692c795ad788f69ae878' AND modified + lifetime >= '1577447479'
+2019-12-27T11:51:19.248966Z	   75 Close stmt
+2019-12-27T11:51:19.250026Z	   75 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:19.250584Z	   75 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:19.251815Z	   75 Reset stmt
+2019-12-27T11:51:19.255532Z	   75 Close stmt
+2019-12-27T11:51:19.256787Z	   75 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:19.258469Z	   75 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:19.260413Z	   75 Reset stmt
+2019-12-27T11:51:19.261837Z	   75 Close stmt
+2019-12-27T11:51:19.263031Z	   75 Prepare	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = ? and user_login = ?
+2019-12-27T11:51:19.263423Z	   75 Execute	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = 'TwoFactorAuth' and user_login = ''
+2019-12-27T11:51:19.265105Z	   75 Reset stmt
+2019-12-27T11:51:19.267356Z	   75 Close stmt
+2019-12-27T11:51:19.268698Z	   75 Prepare	SELECT * FROM matomo_site
+                               WHERE idsite = ?
+2019-12-27T11:51:19.269383Z	   75 Execute	SELECT * FROM matomo_site
+                               WHERE idsite = '1'
+2019-12-27T11:51:19.276949Z	   75 Close stmt
+2019-12-27T11:51:19.277901Z	   75 Prepare	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:19.278197Z	   75 Execute	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:19.278745Z	   75 Reset stmt
+2019-12-27T11:51:19.279268Z	   75 Close stmt
+2019-12-27T11:51:19.279966Z	   75 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:19.280381Z	   75 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-27 11:51:19'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:19.281849Z	   75 Reset stmt
+2019-12-27T11:51:19.282923Z	   75 Close stmt
+2019-12-27T11:51:19.283714Z	   75 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+				AND  log_visit.visit_last_action_time <= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:19.284605Z	   75 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-26 03:00:00'
+				AND  log_visit.visit_last_action_time <= '2019-12-27 11:51:18'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:19.286319Z	   75 Reset stmt
+2019-12-27T11:51:19.288609Z	   75 Close stmt
+2019-12-27T11:51:19.289901Z	   75 Prepare	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:19.290928Z	   75 Execute	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:19.292464Z	   75 Reset stmt
+2019-12-27T11:51:19.293875Z	   75 Close stmt
+2019-12-27T11:51:19.295132Z	   75 Prepare	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:19.296348Z	   75 Execute	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:19.298219Z	   75 Reset stmt
+2019-12-27T11:51:19.299642Z	   75 Close stmt
+2019-12-27T11:51:19.300266Z	   75 Prepare	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:19.301433Z	   75 Execute	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:19.302256Z	   75 Reset stmt
+2019-12-27T11:51:19.304854Z	   75 Close stmt
+2019-12-27T11:51:19.306225Z	   75 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:19.307069Z	   75 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:51:19.311237Z	   75 Close stmt
+2019-12-27T11:51:19.312682Z	   75 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:19.314334Z	   75 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:19.315954Z	   75 Reset stmt
+2019-12-27T11:51:19.316886Z	   75 Close stmt
+2019-12-27T11:51:19.317467Z	   75 Prepare	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE modified = ?,lifetime = ?,data = ?
+2019-12-27T11:51:19.319210Z	   75 Execute	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES ('6e81846ace3a692c795ad788f69ae878','1577447479','1209600','a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTEwNzk7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}') ON DUPLICATE KEY UPDATE modified = '1577447479',lifetime = '1209600',data = 'a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTEwNzk7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}'
+2019-12-27T11:51:19.324943Z	   75 Close stmt
+2019-12-27T11:51:19.325921Z	   75 Quit
+2019-12-27T11:51:24.354755Z	   76 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:51:24.355546Z	   76 Query	SET NAMES utf8
+2019-12-27T11:51:24.356385Z	   76 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:51:24.358545Z	   76 Prepare	SELECT DATABASE()
+2019-12-27T11:51:24.358997Z	   76 Execute	SELECT DATABASE()
+2019-12-27T11:51:24.360741Z	   76 Reset stmt
+2019-12-27T11:51:24.361468Z	   76 Close stmt
+2019-12-27T11:51:24.363883Z	   76 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:24.364772Z	   76 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:24.366826Z	   76 Reset stmt
+2019-12-27T11:51:24.367455Z	   76 Close stmt
+2019-12-27T11:51:24.368050Z	   76 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:24.368359Z	   76 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:51:24.369582Z	   76 Reset stmt
+2019-12-27T11:51:24.375585Z	   76 Close stmt
+2019-12-27T11:51:24.377446Z	   76 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:24.379122Z	   76 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:51:24.381183Z	   76 Reset stmt
+2019-12-27T11:51:24.382844Z	   76 Close stmt
+2019-12-27T11:51:24.385327Z	   76 Prepare	SELECT data FROM matomo_session WHERE id = ? AND modified + lifetime >= ?
+2019-12-27T11:51:24.386602Z	   76 Execute	SELECT data FROM matomo_session WHERE id = '6e81846ace3a692c795ad788f69ae878' AND modified + lifetime >= '1577447484'
+2019-12-27T11:51:24.388856Z	   76 Close stmt
+2019-12-27T11:51:24.390417Z	   76 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:24.391335Z	   76 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:24.392714Z	   76 Reset stmt
+2019-12-27T11:51:24.395449Z	   76 Close stmt
+2019-12-27T11:51:24.398111Z	   76 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:24.399890Z	   76 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:24.402279Z	   76 Reset stmt
+2019-12-27T11:51:24.404143Z	   76 Close stmt
+2019-12-27T11:51:24.405459Z	   76 Prepare	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = ? and user_login = ?
+2019-12-27T11:51:24.406831Z	   76 Execute	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = 'TwoFactorAuth' and user_login = ''
+2019-12-27T11:51:24.408422Z	   76 Reset stmt
+2019-12-27T11:51:24.411527Z	   76 Close stmt
+2019-12-27T11:51:24.414211Z	   76 Prepare	SELECT * FROM matomo_site
+                               WHERE idsite = ?
+2019-12-27T11:51:24.415841Z	   76 Execute	SELECT * FROM matomo_site
+                               WHERE idsite = '1'
+2019-12-27T11:51:24.423497Z	   76 Close stmt
+2019-12-27T11:51:24.424710Z	   76 Prepare	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:24.425476Z	   76 Execute	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:24.427332Z	   76 Reset stmt
+2019-12-27T11:51:24.428556Z	   76 Close stmt
+2019-12-27T11:51:24.430554Z	   76 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:24.431347Z	   76 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-27 11:51:24'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:24.433879Z	   76 Reset stmt
+2019-12-27T11:51:24.435364Z	   76 Close stmt
+2019-12-27T11:51:24.436789Z	   76 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+				AND  log_visit.visit_last_action_time <= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:24.437791Z	   76 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-26 03:00:00'
+				AND  log_visit.visit_last_action_time <= '2019-12-27 11:51:23'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:24.439476Z	   76 Reset stmt
+2019-12-27T11:51:24.441475Z	   76 Close stmt
+2019-12-27T11:51:24.442518Z	   76 Prepare	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:24.443653Z	   76 Execute	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:24.445393Z	   76 Reset stmt
+2019-12-27T11:51:24.447031Z	   76 Close stmt
+2019-12-27T11:51:24.448811Z	   76 Prepare	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:24.449447Z	   76 Execute	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:24.450698Z	   76 Reset stmt
+2019-12-27T11:51:24.451999Z	   76 Close stmt
+2019-12-27T11:51:24.452997Z	   76 Prepare	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:24.453525Z	   76 Execute	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:24.454697Z	   76 Reset stmt
+2019-12-27T11:51:24.455986Z	   76 Close stmt
+2019-12-27T11:51:24.457046Z	   76 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:24.457808Z	   76 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:51:24.463735Z	   76 Close stmt
+2019-12-27T11:51:24.465244Z	   76 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:24.465868Z	   76 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:24.467533Z	   76 Reset stmt
+2019-12-27T11:51:24.468848Z	   76 Close stmt
+2019-12-27T11:51:24.469297Z	   76 Prepare	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE modified = ?,lifetime = ?,data = ?
+2019-12-27T11:51:24.470188Z	   76 Execute	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES ('6e81846ace3a692c795ad788f69ae878','1577447484','1209600','a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTEwODQ7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}') ON DUPLICATE KEY UPDATE modified = '1577447484',lifetime = '1209600',data = 'a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTEwODQ7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}'
+2019-12-27T11:51:24.473703Z	   76 Close stmt
+2019-12-27T11:51:24.474030Z	   76 Quit
+2019-12-27T11:51:48.812277Z	   77 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:51:48.813057Z	   77 Query	SET NAMES utf8
+2019-12-27T11:51:48.813425Z	   77 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:51:48.814292Z	   77 Prepare	SELECT DATABASE()
+2019-12-27T11:51:48.814777Z	   77 Execute	SELECT DATABASE()
+2019-12-27T11:51:48.815547Z	   77 Reset stmt
+2019-12-27T11:51:48.816995Z	   77 Close stmt
+2019-12-27T11:51:48.818064Z	   77 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:48.818468Z	   77 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:48.820751Z	   77 Reset stmt
+2019-12-27T11:51:48.822036Z	   77 Close stmt
+2019-12-27T11:51:48.822630Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.823207Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:51:48.824458Z	   77 Reset stmt
+2019-12-27T11:51:48.834094Z	   77 Close stmt
+2019-12-27T11:51:48.834759Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.835528Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:51:48.836362Z	   77 Reset stmt
+2019-12-27T11:51:48.838702Z	   77 Close stmt
+2019-12-27T11:51:48.839590Z	   77 Prepare	SELECT data FROM matomo_session WHERE id = ? AND modified + lifetime >= ?
+2019-12-27T11:51:48.839984Z	   77 Execute	SELECT data FROM matomo_session WHERE id = '6e81846ace3a692c795ad788f69ae878' AND modified + lifetime >= '1577447508'
+2019-12-27T11:51:48.843253Z	   77 Close stmt
+2019-12-27T11:51:48.844723Z	   77 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:48.845096Z	   77 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:48.847545Z	   77 Reset stmt
+2019-12-27T11:51:48.849642Z	   77 Close stmt
+2019-12-27T11:51:48.850351Z	   77 Prepare	UPDATE `matomo_option` SET option_value = ?, autoload = ? WHERE option_name = ?
+2019-12-27T11:51:48.850646Z	   77 Execute	UPDATE `matomo_option` SET option_value = '1577447508', autoload = '1' WHERE option_name = 'UsersManager.lastSeen.admin'
+2019-12-27T11:51:48.856179Z	   77 Close stmt
+2019-12-27T11:51:48.857558Z	   77 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:48.858472Z	   77 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:48.859278Z	   77 Reset stmt
+2019-12-27T11:51:48.860569Z	   77 Close stmt
+2019-12-27T11:51:48.861575Z	   77 Prepare	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = ? and user_login = ?
+2019-12-27T11:51:48.861933Z	   77 Execute	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = 'TwoFactorAuth' and user_login = ''
+2019-12-27T11:51:48.862918Z	   77 Reset stmt
+2019-12-27T11:51:48.864567Z	   77 Close stmt
+2019-12-27T11:51:48.865048Z	   77 Prepare	SELECT * FROM matomo_site
+                               WHERE idsite = ?
+2019-12-27T11:51:48.865354Z	   77 Execute	SELECT * FROM matomo_site
+                               WHERE idsite = '1'
+2019-12-27T11:51:48.871047Z	   77 Close stmt
+2019-12-27T11:51:48.871586Z	   77 Prepare	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:48.871960Z	   77 Execute	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:48.872548Z	   77 Reset stmt
+2019-12-27T11:51:48.873311Z	   77 Close stmt
+2019-12-27T11:51:48.875968Z	   77 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:48.876327Z	   77 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-27 11:51:48'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:48.879250Z	   77 Reset stmt
+2019-12-27T11:51:48.881064Z	   77 Close stmt
+2019-12-27T11:51:48.882381Z	   77 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+				AND  log_visit.visit_last_action_time <= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:48.882714Z	   77 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-26 03:00:00'
+				AND  log_visit.visit_last_action_time <= '2019-12-27 11:51:47'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:48.883998Z	   77 Reset stmt
+2019-12-27T11:51:48.886807Z	   77 Close stmt
+2019-12-27T11:51:48.888353Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.888966Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'enableBrowserTriggerArchiving'
+2019-12-27T11:51:48.891127Z	   77 Reset stmt
+2019-12-27T11:51:48.892025Z	   77 Close stmt
+2019-12-27T11:51:48.893058Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.894566Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'lastTrackerCronRun'
+2019-12-27T11:51:48.898900Z	   77 Reset stmt
+2019-12-27T11:51:48.902193Z	   77 Close stmt
+2019-12-27T11:51:48.903123Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.903995Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'usercountry.location_provider'
+2019-12-27T11:51:48.906048Z	   77 Reset stmt
+2019-12-27T11:51:48.907933Z	   77 Close stmt
+2019-12-27T11:51:48.909548Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.911872Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'SitesManager_ExcludedUserAgentsGlobal'
+2019-12-27T11:51:48.914856Z	   77 Reset stmt
+2019-12-27T11:51:48.916563Z	   77 Close stmt
+2019-12-27T11:51:48.917924Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.918604Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'SitesManager_ExcludedIpsGlobal'
+2019-12-27T11:51:48.920280Z	   77 Reset stmt
+2019-12-27T11:51:48.922124Z	   77 Close stmt
+2019-12-27T11:51:48.924040Z	   77 Prepare	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:51:48.924589Z	   77 Execute	SHOW COLUMNS FROM `matomo_log_link_visit_action`
+2019-12-27T11:51:48.927085Z	   77 Reset stmt
+2019-12-27T11:51:48.927928Z	   77 Close stmt
+2019-12-27T11:51:48.929838Z	   77 Prepare	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:51:48.930920Z	   77 Execute	SHOW COLUMNS FROM `matomo_log_visit`
+2019-12-27T11:51:48.933584Z	   77 Reset stmt
+2019-12-27T11:51:48.934424Z	   77 Close stmt
+2019-12-27T11:51:48.936536Z	   77 Prepare	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:51:48.937312Z	   77 Execute	SHOW COLUMNS FROM `matomo_log_conversion`
+2019-12-27T11:51:48.939860Z	   77 Reset stmt
+2019-12-27T11:51:48.943398Z	   77 Close stmt
+2019-12-27T11:51:48.945054Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.947987Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'PrivacyManager.useAnonymizedIpForVisitEnrichment'
+2019-12-27T11:51:48.953241Z	   77 Reset stmt
+2019-12-27T11:51:48.955323Z	   77 Close stmt
+2019-12-27T11:51:48.957331Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.959113Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'PrivacyManager.ipAddressMaskLength'
+2019-12-27T11:51:48.961715Z	   77 Reset stmt
+2019-12-27T11:51:48.964090Z	   77 Close stmt
+2019-12-27T11:51:48.965608Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.966838Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'PrivacyManager.doNotTrackEnabled'
+2019-12-27T11:51:48.970709Z	   77 Close stmt
+2019-12-27T11:51:48.972529Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.973761Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'PrivacyManager.ipAnonymizerEnabled'
+2019-12-27T11:51:48.975063Z	   77 Close stmt
+2019-12-27T11:51:48.976275Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.977233Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'PrivacyManager.anonymizeUserId'
+2019-12-27T11:51:48.979438Z	   77 Reset stmt
+2019-12-27T11:51:48.980577Z	   77 Close stmt
+2019-12-27T11:51:48.981734Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.982534Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'PrivacyManager.anonymizeOrderId'
+2019-12-27T11:51:48.983947Z	   77 Reset stmt
+2019-12-27T11:51:48.984864Z	   77 Close stmt
+2019-12-27T11:51:48.985807Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.987224Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_logs_enable'
+2019-12-27T11:51:48.990041Z	   77 Reset stmt
+2019-12-27T11:51:48.990889Z	   77 Close stmt
+2019-12-27T11:51:48.991890Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.993114Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_logs_schedule_lowest_interval'
+2019-12-27T11:51:48.994697Z	   77 Reset stmt
+2019-12-27T11:51:48.996459Z	   77 Close stmt
+2019-12-27T11:51:48.998395Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:48.998885Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_logs_older_than'
+2019-12-27T11:51:49.000014Z	   77 Reset stmt
+2019-12-27T11:51:49.001195Z	   77 Close stmt
+2019-12-27T11:51:49.002075Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.002591Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_logs_max_rows_per_query'
+2019-12-27T11:51:49.005341Z	   77 Reset stmt
+2019-12-27T11:51:49.006594Z	   77 Close stmt
+2019-12-27T11:51:49.008079Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.008641Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_logs_unused_actions_schedule_lowest_interval'
+2019-12-27T11:51:49.009821Z	   77 Reset stmt
+2019-12-27T11:51:49.010855Z	   77 Close stmt
+2019-12-27T11:51:49.012174Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.013111Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'enable_auto_database_size_estimate'
+2019-12-27T11:51:49.014274Z	   77 Reset stmt
+2019-12-27T11:51:49.015079Z	   77 Close stmt
+2019-12-27T11:51:49.017193Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.018535Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'enable_database_size_estimate'
+2019-12-27T11:51:49.020768Z	   77 Reset stmt
+2019-12-27T11:51:49.022874Z	   77 Close stmt
+2019-12-27T11:51:49.024044Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.026048Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_enable'
+2019-12-27T11:51:49.027450Z	   77 Reset stmt
+2019-12-27T11:51:49.028183Z	   77 Close stmt
+2019-12-27T11:51:49.029015Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.029554Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_older_than'
+2019-12-27T11:51:49.030546Z	   77 Reset stmt
+2019-12-27T11:51:49.031506Z	   77 Close stmt
+2019-12-27T11:51:49.032253Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.032816Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_basic_metrics'
+2019-12-27T11:51:49.034171Z	   77 Reset stmt
+2019-12-27T11:51:49.034812Z	   77 Close stmt
+2019-12-27T11:51:49.035656Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.036376Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_day_reports'
+2019-12-27T11:51:49.037557Z	   77 Reset stmt
+2019-12-27T11:51:49.038241Z	   77 Close stmt
+2019-12-27T11:51:49.039474Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.040125Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_week_reports'
+2019-12-27T11:51:49.041465Z	   77 Reset stmt
+2019-12-27T11:51:49.043024Z	   77 Close stmt
+2019-12-27T11:51:49.044584Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.045373Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_month_reports'
+2019-12-27T11:51:49.046389Z	   77 Reset stmt
+2019-12-27T11:51:49.047471Z	   77 Close stmt
+2019-12-27T11:51:49.048365Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.049028Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_year_reports'
+2019-12-27T11:51:49.050012Z	   77 Reset stmt
+2019-12-27T11:51:49.050515Z	   77 Close stmt
+2019-12-27T11:51:49.051100Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.051432Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_range_reports'
+2019-12-27T11:51:49.051996Z	   77 Reset stmt
+2019-12-27T11:51:49.052492Z	   77 Close stmt
+2019-12-27T11:51:49.052873Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.053169Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'delete_reports_keep_segment_reports'
+2019-12-27T11:51:49.053708Z	   77 Reset stmt
+2019-12-27T11:51:49.054849Z	   77 Close stmt
+2019-12-27T11:51:49.055510Z	   77 Prepare	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:49.055861Z	   77 Execute	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:49.056791Z	   77 Reset stmt
+2019-12-27T11:51:49.057457Z	   77 Close stmt
+2019-12-27T11:51:49.058092Z	   77 Prepare	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:49.058414Z	   77 Execute	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:49.059124Z	   77 Reset stmt
+2019-12-27T11:51:49.059687Z	   77 Close stmt
+2019-12-27T11:51:49.060140Z	   77 Prepare	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:49.060484Z	   77 Execute	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:49.061688Z	   77 Reset stmt
+2019-12-27T11:51:49.063438Z	   77 Close stmt
+2019-12-27T11:51:49.063821Z	   77 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:49.064100Z	   77 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:51:49.066724Z	   77 Close stmt
+2019-12-27T11:51:49.067886Z	   77 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:49.069243Z	   77 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:49.073921Z	   77 Reset stmt
+2019-12-27T11:51:49.076189Z	   77 Close stmt
+2019-12-27T11:51:49.077152Z	   77 Prepare	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE modified = ?,lifetime = ?,data = ?
+2019-12-27T11:51:49.077759Z	   77 Execute	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES ('6e81846ace3a692c795ad788f69ae878','1577447509','1209600','a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTExMDg7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}') ON DUPLICATE KEY UPDATE modified = '1577447509',lifetime = '1209600',data = 'a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTExMDg7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}'
+2019-12-27T11:51:49.142978Z	   77 Close stmt
+2019-12-27T11:51:49.145215Z	   77 Quit
+2019-12-27T11:51:50.820823Z	   78 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:51:50.821385Z	   78 Query	SET NAMES utf8
+2019-12-27T11:51:50.822274Z	   78 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:51:50.824204Z	   78 Prepare	SELECT DATABASE()
+2019-12-27T11:51:50.826479Z	   78 Execute	SELECT DATABASE()
+2019-12-27T11:51:50.827785Z	   78 Reset stmt
+2019-12-27T11:51:50.828829Z	   78 Close stmt
+2019-12-27T11:51:50.830403Z	   78 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:50.830683Z	   78 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:50.834058Z	   78 Reset stmt
+2019-12-27T11:51:50.834810Z	   78 Close stmt
+2019-12-27T11:51:50.835676Z	   78 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:50.836290Z	   78 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:51:50.837422Z	   78 Reset stmt
+2019-12-27T11:51:50.849041Z	   78 Close stmt
+2019-12-27T11:51:50.849846Z	   78 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:50.850205Z	   78 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:51:50.851134Z	   78 Reset stmt
+2019-12-27T11:51:50.852499Z	   78 Close stmt
+2019-12-27T11:51:50.853007Z	   78 Prepare	SELECT data FROM matomo_session WHERE id = ? AND modified + lifetime >= ?
+2019-12-27T11:51:50.853340Z	   78 Execute	SELECT data FROM matomo_session WHERE id = '6e81846ace3a692c795ad788f69ae878' AND modified + lifetime >= '1577447510'
+2019-12-27T11:51:50.854630Z	   78 Close stmt
+2019-12-27T11:51:50.855054Z	   78 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:50.855253Z	   78 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:50.855770Z	   78 Reset stmt
+2019-12-27T11:51:50.858465Z	   78 Close stmt
+2019-12-27T11:51:50.860594Z	   78 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:50.861673Z	   78 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:50.863518Z	   78 Reset stmt
+2019-12-27T11:51:50.865448Z	   78 Close stmt
+2019-12-27T11:51:50.866431Z	   78 Prepare	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = ? and user_login = ?
+2019-12-27T11:51:50.867082Z	   78 Execute	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = 'TwoFactorAuth' and user_login = ''
+2019-12-27T11:51:50.868192Z	   78 Reset stmt
+2019-12-27T11:51:50.869812Z	   78 Close stmt
+2019-12-27T11:51:50.871865Z	   78 Prepare	SELECT * FROM matomo_site
+                               WHERE idsite = ?
+2019-12-27T11:51:50.874302Z	   78 Execute	SELECT * FROM matomo_site
+                               WHERE idsite = '1'
+2019-12-27T11:51:50.883661Z	   78 Close stmt
+2019-12-27T11:51:50.884753Z	   78 Prepare	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:50.886245Z	   78 Execute	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:50.888197Z	   78 Reset stmt
+2019-12-27T11:51:50.888922Z	   78 Close stmt
+2019-12-27T11:51:50.889554Z	   78 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:50.890007Z	   78 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-27 11:51:50'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:50.891495Z	   78 Reset stmt
+2019-12-27T11:51:50.892854Z	   78 Close stmt
+2019-12-27T11:51:50.894040Z	   78 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+				AND  log_visit.visit_last_action_time <= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:50.894430Z	   78 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-26 03:00:00'
+				AND  log_visit.visit_last_action_time <= '2019-12-27 11:51:49'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:50.895651Z	   78 Reset stmt
+2019-12-27T11:51:50.897324Z	   78 Close stmt
+2019-12-27T11:51:50.899546Z	   78 Prepare	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:50.900688Z	   78 Execute	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:50.903591Z	   78 Reset stmt
+2019-12-27T11:51:50.905387Z	   78 Close stmt
+2019-12-27T11:51:50.907885Z	   78 Prepare	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:50.910893Z	   78 Execute	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:50.914248Z	   78 Reset stmt
+2019-12-27T11:51:50.915648Z	   78 Close stmt
+2019-12-27T11:51:50.916874Z	   78 Prepare	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:50.917703Z	   78 Execute	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:50.918985Z	   78 Reset stmt
+2019-12-27T11:51:50.920685Z	   78 Close stmt
+2019-12-27T11:51:50.921747Z	   78 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:50.923041Z	   78 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:51:50.926620Z	   78 Close stmt
+2019-12-27T11:51:50.927766Z	   78 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:50.929031Z	   78 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:50.930977Z	   78 Reset stmt
+2019-12-27T11:51:50.933152Z	   78 Close stmt
+2019-12-27T11:51:50.934963Z	   78 Prepare	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE modified = ?,lifetime = ?,data = ?
+2019-12-27T11:51:50.935872Z	   78 Execute	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES ('6e81846ace3a692c795ad788f69ae878','1577447510','1209600','a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTExMTA7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}') ON DUPLICATE KEY UPDATE modified = '1577447510',lifetime = '1209600',data = 'a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTExMTA7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}'
+2019-12-27T11:51:50.948029Z	   78 Close stmt
+2019-12-27T11:51:50.948860Z	   78 Quit
+2019-12-27T11:51:55.978813Z	   79 Connect	matomo@1.1.0.3 on matomo using TCP/IP
+2019-12-27T11:51:55.979225Z	   79 Query	SET NAMES utf8
+2019-12-27T11:51:55.979980Z	   79 Query	SET sql_mode = "NO_AUTO_VALUE_ON_ZERO"
+2019-12-27T11:51:55.982131Z	   79 Prepare	SELECT DATABASE()
+2019-12-27T11:51:55.982496Z	   79 Execute	SELECT DATABASE()
+2019-12-27T11:51:55.983657Z	   79 Reset stmt
+2019-12-27T11:51:55.984929Z	   79 Close stmt
+2019-12-27T11:51:55.985589Z	   79 Prepare	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:55.985854Z	   79 Execute	SELECT option_value, option_name FROM `matomo_option` WHERE autoload = 1
+2019-12-27T11:51:55.987283Z	   79 Reset stmt
+2019-12-27T11:51:55.988336Z	   79 Close stmt
+2019-12-27T11:51:55.989813Z	   79 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:55.990183Z	   79 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'TestingIfDatabaseConnectionWorked'
+2019-12-27T11:51:55.992439Z	   79 Reset stmt
+2019-12-27T11:51:55.997902Z	   79 Close stmt
+2019-12-27T11:51:55.998525Z	   79 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:55.999783Z	   79 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'piwikUrl'
+2019-12-27T11:51:56.001871Z	   79 Reset stmt
+2019-12-27T11:51:56.003960Z	   79 Close stmt
+2019-12-27T11:51:56.005356Z	   79 Prepare	SELECT data FROM matomo_session WHERE id = ? AND modified + lifetime >= ?
+2019-12-27T11:51:56.006558Z	   79 Execute	SELECT data FROM matomo_session WHERE id = '6e81846ace3a692c795ad788f69ae878' AND modified + lifetime >= '1577447516'
+2019-12-27T11:51:56.008885Z	   79 Close stmt
+2019-12-27T11:51:56.009878Z	   79 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:56.011560Z	   79 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:56.013772Z	   79 Reset stmt
+2019-12-27T11:51:56.016405Z	   79 Close stmt
+2019-12-27T11:51:56.017972Z	   79 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:56.021005Z	   79 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:56.024104Z	   79 Reset stmt
+2019-12-27T11:51:56.026887Z	   79 Close stmt
+2019-12-27T11:51:56.030279Z	   79 Prepare	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = ? and user_login = ?
+2019-12-27T11:51:56.031611Z	   79 Execute	SELECT `setting_name`, `setting_value`, `json_encoded` FROM matomo_plugin_setting WHERE plugin_name = 'TwoFactorAuth' and user_login = ''
+2019-12-27T11:51:56.033951Z	   79 Reset stmt
+2019-12-27T11:51:56.036815Z	   79 Close stmt
+2019-12-27T11:51:56.038316Z	   79 Prepare	SELECT * FROM matomo_site
+                               WHERE idsite = ?
+2019-12-27T11:51:56.038990Z	   79 Execute	SELECT * FROM matomo_site
+                               WHERE idsite = '1'
+2019-12-27T11:51:56.048634Z	   79 Close stmt
+2019-12-27T11:51:56.049223Z	   79 Prepare	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:56.049777Z	   79 Execute	SELECT * FROM matomo_segment WHERE deleted = 0
+2019-12-27T11:51:56.050785Z	   79 Reset stmt
+2019-12-27T11:51:56.052776Z	   79 Close stmt
+2019-12-27T11:51:56.055131Z	   79 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:56.055639Z	   79 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-27 11:51:56'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:56.057622Z	   79 Reset stmt
+2019-12-27T11:51:56.059980Z	   79 Close stmt
+2019-12-27T11:51:56.061862Z	   79 Prepare	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in (?)
+				AND log_visit.visit_last_action_time >= ?
+				AND  log_visit.visit_last_action_time <= ?
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:56.062234Z	   79 Execute	SELECT
+				log_visit.*
+			FROM
+				matomo_log_visit AS log_visit
+			WHERE
+				log_visit.idsite in ('1')
+				AND log_visit.visit_last_action_time >= '2019-12-26 03:00:00'
+				AND  log_visit.visit_last_action_time <= '2019-12-27 11:51:55'
+			ORDER BY
+				log_visit.idsite DESC, log_visit.visit_last_action_time DESC LIMIT 0, 11
+2019-12-27T11:51:56.065094Z	   79 Reset stmt
+2019-12-27T11:51:56.069765Z	   79 Close stmt
+2019-12-27T11:51:56.071533Z	   79 Prepare	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:56.072361Z	   79 Execute	SELECT
+					log_link_visit_action.idvisit,
+					COALESCE(log_action.type, log_action_title.type) AS type,
+					log_action.name AS url,
+					log_action.url_prefix,
+					log_action_title.name AS pageTitle,
+					log_action.idaction AS pageIdAction,
+					log_link_visit_action.idpageview,
+					log_link_visit_action.idlink_va,
+					log_link_visit_action.server_time as serverTimePretty,
+					log_link_visit_action.time_spent_ref_action as timeSpentRef,
+					log_link_visit_action.idlink_va AS pageId,
+					log_link_visit_action.custom_float,
+					log_link_visit_action.interaction_position
+					, log_action_event_category.type AS eventType, log_action_event_category.name AS eventCategory, log_action_event_action.name as eventAction, custom_var_k1, custom_var_v1, custom_var_k2, custom_var_v2, custom_var_k3, custom_var_v3, custom_var_k4, custom_var_v4, custom_var_k5, custom_var_v5, log_action_content_name.name as contentName, log_action_content_piece.name as contentPiece, log_action_content_target.name as contentTarget, log_action_content_interaction.name as contentInteraction
+				FROM matomo_log_link_visit_action AS log_link_visit_action
+					LEFT JOIN matomo_log_action AS log_action
+					ON  log_link_visit_action.idaction_url = log_action.idaction
+					LEFT JOIN matomo_log_action AS log_action_title
+					ON  log_link_visit_action.idaction_name = log_action_title.idaction
+					LEFT JOIN matomo_log_action AS log_action_event_action
+					ON  log_link_visit_action.idaction_event_action = log_action_event_action.idaction LEFT JOIN matomo_log_action AS log_action_event_category
+					ON  log_link_visit_action.idaction_event_category = log_action_event_category.idaction LEFT JOIN matomo_log_action AS log_action_content_name
+					ON  log_link_visit_action.idaction_content_name = log_action_content_name.idaction LEFT JOIN matomo_log_action AS log_action_content_piece
+					ON  log_link_visit_action.idaction_content_piece = log_action_content_piece.idaction LEFT JOIN matomo_log_action AS log_action_content_target
+					ON  log_link_visit_action.idaction_content_target = log_action_content_target.idaction LEFT JOIN matomo_log_action AS log_action_content_interaction
+					ON  log_link_visit_action.idaction_content_interaction = log_action_content_interaction.idaction
+				WHERE log_link_visit_action.idvisit IN ('')
+				ORDER BY log_link_visit_action.idvisit, server_time ASC
+2019-12-27T11:51:56.074137Z	   79 Reset stmt
+2019-12-27T11:51:56.074939Z	   79 Close stmt
+2019-12-27T11:51:56.076099Z	   79 Prepare	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:56.076637Z	   79 Execute	SELECT
+						log_conversion.idvisit,
+						'goal' as type,
+						goal.name as goalName,
+						goal.idgoal as goalId,
+						log_link_visit_action.idpageview,
+						log_conversion.revenue as revenue,
+						log_conversion.idlink_va,
+						log_conversion.idlink_va as goalPageId,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.url as url
+				FROM matomo_log_conversion AS log_conversion
+				LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+				    ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+				LEFT JOIN matomo_goal AS goal
+					ON (goal.idsite = log_conversion.idsite
+						AND
+						goal.idgoal = log_conversion.idgoal)
+					AND goal.deleted = 0
+				WHERE log_conversion.idvisit IN ('')
+					AND log_conversion.idgoal > 0
+                ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:56.078455Z	   79 Reset stmt
+2019-12-27T11:51:56.079761Z	   79 Close stmt
+2019-12-27T11:51:56.080694Z	   79 Prepare	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:56.081057Z	   79 Execute	SELECT
+						log_conversion.idvisit,
+						case idgoal when -1 then 'ecommerceAbandonedCart' else 'ecommerceOrder' end as type,
+						idorder as orderId,
+						ROUND(revenue,2) as revenue,
+						ROUND(revenue_subtotal,2) as revenueSubTotal,
+						ROUND(revenue_tax,2) as revenueTax,
+						ROUND(revenue_shipping,2) as revenueShipping,
+						ROUND(revenue_discount,2) as revenueDiscount,
+						items as items,
+						log_conversion.server_time as serverTimePretty,
+						log_conversion.idlink_va,
+						log_link_visit_action.idpageview
+					FROM matomo_log_conversion AS log_conversion
+		       LEFT JOIN matomo_log_link_visit_action AS log_link_visit_action
+		              ON log_link_visit_action.idlink_va = log_conversion.idlink_va
+					WHERE log_conversion.idvisit IN ('')
+						AND idgoal <= 0
+					ORDER BY log_conversion.idvisit, log_conversion.server_time ASC
+2019-12-27T11:51:56.082417Z	   79 Reset stmt
+2019-12-27T11:51:56.084733Z	   79 Close stmt
+2019-12-27T11:51:56.086663Z	   79 Prepare	SELECT option_value FROM `matomo_option` WHERE option_name = ?
+2019-12-27T11:51:56.087420Z	   79 Execute	SELECT option_value FROM `matomo_option` WHERE option_name = 'UpdateCheck_LatestVersion'
+2019-12-27T11:51:56.098137Z	   79 Close stmt
+2019-12-27T11:51:56.100350Z	   79 Prepare	SELECT * FROM matomo_user WHERE login = ?
+2019-12-27T11:51:56.101961Z	   79 Execute	SELECT * FROM matomo_user WHERE login = 'admin'
+2019-12-27T11:51:56.104555Z	   79 Reset stmt
+2019-12-27T11:51:56.105924Z	   79 Close stmt
+2019-12-27T11:51:56.106760Z	   79 Prepare	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE modified = ?,lifetime = ?,data = ?
+2019-12-27T11:51:56.107180Z	   79 Execute	INSERT INTO matomo_session (id,modified,lifetime,data) VALUES ('6e81846ace3a692c795ad788f69ae878','1577447516','1209600','a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTExMTY7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}') ON DUPLICATE KEY UPDATE modified = '1577447516',lifetime = '1209600',data = 'a:1:{s:4:\"data\";s:552:\"YTo2OntzOjQ6Il9fWkYiO2E6Mjp7czoxMToiTG9naW4ubG9naW4iO2E6MTp7czo0OiJFTlZUIjthOjE6e3M6NToibm9uY2UiO2k6MTU3NzQ0NzY3MTt9fXM6MTU6InNpdGVXaXRob3V0RGF0YSI7YToxOntzOjM6IkVOVCI7aToxNTc3NDUwODkyO319czo5OiJ1c2VyLm5hbWUiO3M6NToiYWRtaW4iO3M6MjI6InR3b2ZhY3RvcmF1dGgudmVyaWZpZWQiO2k6MDtzOjEyOiJzZXNzaW9uLmluZm8iO2E6Mzp7czoyOiJ0cyI7aToxNTc3NDQ3MjAxO3M6MTA6InJlbWVtYmVyZWQiO2I6MDtzOjEwOiJleHBpcmF0aW9uIjtpOjE1Nzc0NTExMTY7fXM6MTI6Im5vdGlmaWNhdGlvbiI7YToxOntzOjEzOiJub3RpZmljYXRpb25zIjthOjA6e319czoxNToic2l0ZVdpdGhvdXREYXRhIjthOjE6e3M6MTM6Imlnbm9yZU1lc3NhZ2UiO2I6MTt9fQ==\";}'
+2019-12-27T11:51:56.111111Z	   79 Close stmt
+2019-12-27T11:51:56.111978Z	   79 Quit
